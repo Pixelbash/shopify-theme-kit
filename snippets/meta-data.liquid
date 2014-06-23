@@ -1,0 +1,38 @@
+<title>{% if template contains == 'index' %}{{ shop.name }}
+{% elsif template contains == '404' %}Page Not Found | {{ shop.name }}
+{% elsif template contains == 'product' %}{{product.title}} | {{ shop.name }}
+{% elsif template contains == 'collection' %}{{collection.title}} | {{ shop.name }}
+{% else %}{{ page_title }} | {{ shop.name }}
+{% endif %}</title>
+
+<meta property="og:title" content="{% if template contains == 'index' %}{{ shop.name }}
+{% elsif template contains == '404' %}Page Not Found | {{ shop.name }}
+{% elsif template contains == 'product' %}{{product.title}} | {{ shop.name }}
+{% elsif template contains == 'collection' %}{{collection.title}} | {{ shop.name }}
+{% else %}{{ page_title }} | {{ shop.name }}
+{% endif %}" />
+
+{% if page_description %}
+<meta name="description" content="{{ page_description | escape }}" />
+<meta property="og:description" content="{{ page_description | escape }}" />
+{% endif %}
+
+
+{% if template contains 'product' %}
+<meta property="og:image" content="http:{{ product.featured_image.src | product_img_url: 'grande' }}" />
+<meta property="og:image:secure_url" content="https:{{ product.featured_image.src | product_img_url: 'grande' }}" />
+
+{% elsif template contains 'article' %} 
+  {% if article.metafields.article.featured_image != null  %}
+    <meta property="og:image" content="{{ article.metafields.article.featured_image | replace: 'http:', '' }}" />
+    <meta property="og:image:secure_url" content="https:{{ article.metafields.article.featured_image | replace: 'http:', '' }}" />
+  {% endif %}
+{% else %}
+  {% if settings.use_logo %}
+    <meta property="og:image" content="http:{{ 'logo.png' | asset_url }}" />
+    <meta property="og:image:secure_url" content="https:{{ 'logo.png' | asset_url }}" />
+  {% endif %}
+{% endif %}
+
+
+<meta property="og:url" content="{{ canonical_url }}" />

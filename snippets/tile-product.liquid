@@ -1,0 +1,35 @@
+<div class="product {% if product.available == false %}product-sold{% endif %}">
+  <a href="{{ product.url }}"></a>
+  <div class="overlay">
+    <div class="overlay-t">
+      <div class="overlay-r">
+        <div class="overlay-c">
+          <h2 class="hx hx-m hx-product-tile">
+            {{ product.title }}
+          </h2>
+          <div class="line"></div>
+          {% if product.available %}
+            {% if product.options.size > 1 %}
+              <div class="desc">
+                Available in:<br />
+                <div class="desc-list-sizes">
+                {% for variant in product.variants %}<span data-size="{{ variant.option2 }}"></span>{% endfor %}
+                </div>
+              </div>
+              <div class="line"></div>
+            {% endif %}
+          {% else %}
+            <div class="desc">
+              SOLD OUT
+            </div>
+            <div class="line"></div>
+          {% endif %}
+          <div class="price">
+            <h4 class="hx hx-m">{{ product.price | money }}</h4>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+  <div class="background" style="background-image:url('{{ product.featured_image | product_img_url: 'master' }}')"></div>
+</div>

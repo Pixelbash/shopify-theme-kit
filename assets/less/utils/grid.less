@@ -1,0 +1,49 @@
+* {	-moz-box-sizing: border-box;-webkit-box-sizing: border-box;	box-sizing: border-box;}
+
+.columnConstructor(@percentage, @gutter) {
+	@calcPercentage: (@percentage/12) * 100;
+	float:left;
+	padding:0 @gutter;
+	width:~"@{calcPercentage}%";	
+	&.compact {padding:0}
+}
+
+.span(@num:1,@gutter : @gutter) {
+    .columnConstructor(@num,   @gutter)
+}
+
+.gridMake(@gutter : @gutter) {
+	.span1 {.columnConstructor(1,   @gutter)}
+	.span2 {.columnConstructor(2,   @gutter)}
+	.span3 {.columnConstructor(3,   @gutter)}
+	.span4 {.columnConstructor(4,   @gutter)}
+	.span5 {.columnConstructor(5,   @gutter)}
+	.span6 {.columnConstructor(6,   @gutter)}
+	.span7 {.columnConstructor(7,   @gutter)}
+	.span8 {.columnConstructor(8,   @gutter)}
+	.span9 {.columnConstructor(9,   @gutter)}
+	.span10 {.columnConstructor(10, @gutter)}
+	.span11 {.columnConstructor(11, @gutter)}
+	.span12 {.columnConstructor(12, @gutter)}
+}
+
+.gridMax(@gutter : @gutter) {
+	.span1 {.columnConstructor(11,   @gutter);}
+	.span2 {.columnConstructor(12,   @gutter)}
+	.span3 {.columnConstructor(12,   @gutter)}
+	.span4 {.columnConstructor(12,   @gutter)}
+	.span5 {.columnConstructor(12,   @gutter)}
+	.span6 {.columnConstructor(12,   @gutter)}
+	.span7 {.columnConstructor(12,   @gutter)}
+	.span8 {.columnConstructor(12,   @gutter)}
+	.span9 {.columnConstructor(12,   @gutter)}
+	.span10 {.columnConstructor(12, @gutter)}
+	.span11 {.columnConstructor(12, @gutter)}
+	.span12 {.columnConstructor(12, @gutter)}
+}
+
+.cfx {
+  zoom:1;
+  &:before, &:after{ content:""; display:table; }
+  &:after{ clear: both; }
+}

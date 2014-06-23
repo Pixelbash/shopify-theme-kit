@@ -1,0 +1,56 @@
+<div class="content-wrap content-wrap-home">
+  <div class="content content-home">
+    <div class="slider-wrap">
+    	<div class="slider-controls">
+    		<div class="slider-next"></div>
+    		<div class="slider-prev"></div>
+    	</div>
+      <div class="slider">
+        {% for i in (1..9) %}
+          {% capture slide_title %}{% comment %}
+            capturing slide title
+          {% endcomment %}{% if i == 1 %}{{ settings.slide1_title }}{% endif %}{% comment %}
+          {% endcomment %}{% if i == 2 %}{{ settings.slide2_title }}{% endif %}{% comment %}
+          {% endcomment %}{% if i == 3 %}{{ settings.slide3_title }}{% endif %}{% comment %}
+          {% endcomment %}{% if i == 4 %}{{ settings.slide4_title }}{% endif %}{% comment %}
+          {% endcomment %}{% if i == 5 %}{{ settings.slide5_title }}{% endif %}{% comment %}
+          {% endcomment %}{% if i == 6 %}{{ settings.slide6_title }}{% endif %}{% comment %}
+          {% endcomment %}{% if i == 7 %}{{ settings.slide7_title }}{% endif %}{% comment %}
+          {% endcomment %}{% if i == 8 %}{{ settings.slide8_title }}{% endif %}{% comment %}
+          {% endcomment %}{% if i == 9 %}{{ settings.slide9_title }}{% endif %}{% comment %}
+          {% endcomment %}{% endcapture %}
+
+          {% capture slide_link %}{% comment %}
+            capturing slide link
+          {% endcomment %}{% if i == 1 %}{{ settings.slide1_link }}{% endif %}{% comment %}
+          {% endcomment %}{% if i == 2 %}{{ settings.slide2_link }}{% endif %}{% comment %}
+          {% endcomment %}{% if i == 3 %}{{ settings.slide3_link }}{% endif %}{% comment %}
+          {% endcomment %}{% if i == 4 %}{{ settings.slide4_link }}{% endif %}{% comment %}
+          {% endcomment %}{% if i == 5 %}{{ settings.slide5_link }}{% endif %}{% comment %}
+          {% endcomment %}{% if i == 6 %}{{ settings.slide6_link }}{% endif %}{% comment %}
+          {% endcomment %}{% if i == 7 %}{{ settings.slide7_link }}{% endif %}{% comment %}
+          {% endcomment %}{% if i == 8 %}{{ settings.slide8_link }}{% endif %}{% comment %}
+          {% endcomment %}{% if i == 9 %}{{ settings.slide9_link }}{% endif %}{% comment %}
+          {% endcomment %}{% endcapture %}
+
+          {% capture slide_image %}{% comment %}
+            capturing slide image
+          {% endcomment %}{% if i == 1 %}{{ 'slide1.jpg' | asset_url }}{% endif %}{% comment %}
+          {% endcomment %}{% if i == 2 %}{{ 'slide2.jpg' | asset_url }}{% endif %}{% comment %}
+          {% endcomment %}{% if i == 3 %}{{ 'slide3.jpg' | asset_url }}{% endif %}{% comment %}
+          {% endcomment %}{% if i == 4 %}{{ 'slide4.jpg' | asset_url }}{% endif %}{% comment %}
+          {% endcomment %}{% if i == 5 %}{{ 'slide5.jpg' | asset_url }}{% endif %}{% comment %}
+          {% endcomment %}{% if i == 6 %}{{ 'slide6.jpg' | asset_url }}{% endif %}{% comment %}
+          {% endcomment %}{% if i == 7 %}{{ 'slide7.jpg' | asset_url }}{% endif %}{% comment %}
+          {% endcomment %}{% if i == 8 %}{{ 'slide8.jpg' | asset_url }}{% endif %}{% comment %}
+          {% endcomment %}{% if i == 9 %}{{ 'slide9.jpg' | asset_url }}{% endif %}{% comment %}
+          {% endcomment %}{% endcapture %}
+
+          {% if slide_title != '' %}
+          {% include 'slide-collection' %}
+          {% endif %}
+        {% endfor %}
+      </div>
+    </div>
+  </div>
+</div>

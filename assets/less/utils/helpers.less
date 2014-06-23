@@ -1,0 +1,85 @@
+.pv(@p,@v) {
+	visibility:~"visible;@{p}:@{v}";
+}
+
+.wrapper(@width:@wrap) { width:@width; margin: 0 auto;}
+.hList {
+	list-style:none;
+	margin:0;
+	padding:0;
+	li {
+		margin:0;
+		padding:0;
+		display:inline-block;
+		*display:inline; 
+	}
+}
+
+.clearfix() {
+  *zoom: 1;
+
+  &:before,
+  &:after {
+    display: table;
+    content: "";
+  }
+
+  &:after {
+    clear: both;
+  }
+}
+
+.placeholder(@colour: #666) { 
+  &::-webkit-input-placeholder {  
+     color: @colour;  
+  }
+  -moz-appearance:    textfield;
+  &::-moz-placeholder {  
+     color: @colour;  
+  }
+  -webkit-appearance: textfield;
+  &:-moz-placeholder {  
+     color: @colour;  
+  }
+  appearance: textfield;
+  &:-ms-input-placeholder {  
+     color: @colour;  
+  }
+}
+
+.appearance_none {
+	background:transparent;
+    -webkit-appearance: none;
+    -moz-appearance: none;
+    appearance: none;
+    border:none;
+    box-shadow:none;
+}
+
+.clickthrough {
+	pointer-events:none;
+	background:none !important;
+}
+.absPos(@dSide: 0px, @dVert: 0px, @width:10px, @height: 10px, @side: left, @vert: top, @zIndex: 10) {
+  display:block;
+  position:absolute;
+  .pv(@side, @dSide);
+  .pv(@vert, @dVert);
+  width:@width;
+  height:@height;
+  z-index:@zIndex;
+}
+.fixPos(@dSide: 0px, @dVert: 0px, @width:10px, @height: 10px, @side: left, @vert: top, @zIndex: 10) {
+  display:block;
+  position:fixed;
+  .pv(@side, @dSide);
+  .pv(@vert, @dVert);
+  width:@width;
+  height:@height;
+  z-index:@zIndex;
+}
+
+.absImg(@dSide: 0px, @dVert: 0px, @width:10px, @height: 10px, @src: '../img/logo.png', @side: left, @vert: top, @zIndex: 10, @repeat: no-repeat) {
+	.absPos(@dSide, @dVert, @width, @height, @side, @vert, @zIndex);
+	background:url(@src) center @repeat;
+}

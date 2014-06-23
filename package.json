@@ -1,0 +1,13 @@
+{
+    "name": "dev-cosshop",
+    "version": "0.1.0",
+    "devDependencies": {
+        "grunt": "*",
+        "grunt-shopify": "*",
+        "grunt-contrib-watch": "*",
+        "grunt-contrib-copy": "*",
+        "grunt-contrib-jshint": "*",
+        "grunt-contrib-uglify": "*",
+        "grunt-contrib-less": "*"
+    }
+}
