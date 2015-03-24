@@ -28,9 +28,9 @@
     <link rel="sitemap" type="application/xml" title="Sitemap" href="{{ 'sitemap.xml' | asset_url }}" />
     <link rel="shortcut icon" href="{{ 'favicon.ico' | asset_url }}" type="image/png" />
 
-    <script type="text/javascript" src="//use.typekit.net/jzt0mwq.js"></script>
-    <script type="text/javascript">try{Typekit.load();}catch(e){}</script>
     <link rel="stylesheet" href="{{ 'style.css' | asset_url }}" media="screen" />
+
+    <link href='//fonts.googleapis.com/css?family=Merriweather:400,700,400italic' rel='stylesheet' type='text/css'>
 
     <!-- give life to HTML5 objects in IE -->
     <!--[if lte IE 8]><script src="//html5shim.googlecode.com/svn/trunk/html5.js"></script><![endif]-->
@@ -118,7 +118,7 @@
       </section>
       <div class="newsletter-wrap">
         <a href="#newsletter">Newsletter</a>
-        <form class="newsletter" action="https://example.us2.list-manage.com/subscribe/post-json?u=3f60448f94f1eafff284f3d09&id=4b0245f902&c=?" method="get" >
+        <form class="newsletter" action="https://example.us2.list-manage.com/subscribe/post-json?" method="get" >
           <div class="success">
               Thankyou for signing up!
           </div>
@@ -137,8 +137,8 @@
 <!-- site JS -->
 {{ '//ajax.googleapis.com/ajax/libs/jquery/1.9.1/jquery.min.js' | script_tag }}
 {{ 'option_selection.js' | shopify_asset_url | script_tag }}
-<script src="{{ 'plugins.min.js' | asset_url }}"></script>
-<script src="{{ 'init.min.js' | asset_url }}"></script>
+<script src="{{ 'plugins.js' | asset_url }}"></script>  
+<script src="{{ 'app.js' | asset_url }}"></script>  
 
 </body>
 </html>

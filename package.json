@@ -1,13 +1,31 @@
 {
-    "name": "dev-cosshop",
-    "version": "0.1.0",
-    "devDependencies": {
-        "grunt": "*",
-        "grunt-shopify": "*",
-        "grunt-contrib-watch": "*",
-        "grunt-contrib-copy": "*",
-        "grunt-contrib-jshint": "*",
-        "grunt-contrib-uglify": "*",
-        "grunt-contrib-less": "*"
-    }
+  "name": "shopimake",
+  "version": "0.1.0",
+  "description": "Shopimake",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/Pixelbash/shopimake"
+  },
+  "dependencies": {
+    "babel-core": "^4.7.16",
+    "babelify": "^5.0.4",
+    "browserify": "^9.0.3",
+    "deamdify": "^0.1.1",
+    "debowerify": "^1.2.0",
+    "gulp": "^3.8.11",
+    "gulp-browserify": "^0.5.1",
+    "gulp-changed": "^1.1.1",
+    "gulp-concat": "^2.5.2",
+    "gulp-ignore": "^1.2.1",
+    "gulp-less": "^3.0.1",
+    "gulp-rename": "^1.2.0",
+    "gulp-shopify-upload": "git://github.com/joeswann/gulp-shopify-upload",
+    "gulp-uglify": "^1.1.0",
+    "gulp-uglifycss": "^1.0.4",
+    "gulp-watch": "^4.1.1",
+    "lodash": "^3.5.0",
+    "main-bower-files": "^2.5.0",
+    "uglifyify": "^3.0.1",
+    "vinyl-source-stream": "^1.1.0"
+  }
 }
