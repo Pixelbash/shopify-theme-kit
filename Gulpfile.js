@@ -18,11 +18,13 @@ var source     = require('vinyl-source-stream');
 var mainBowerFiles = require('main-bower-files');
 var concat         = require('gulp-concat');
 
+var config = require('./config');
+
  //Shopify vars
  var shop = {
-    api_key: "",
-    password: "",
-    url: "test.myshopify.com"
+    api_key: config.shopify.api_key,
+    password: config.shopify.pass,
+    url: config.shopify.url
  }
 
 gulp.task('js', function () {
