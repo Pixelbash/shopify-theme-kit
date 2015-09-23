@@ -1,11 +1,15 @@
-__supplied
-__downloads
-__working
+/__supplied
+/__downloads
+/__working
 
-build
-node_modules
-assets/js/lib
-shop
+/build
+/node_modules
+/_src/assets/js/lib
+/assets
+/config
+/layout
+/snippets
+/templates
 
 sftp-config.json
 config.js

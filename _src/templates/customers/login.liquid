@@ -1,0 +1,69 @@
+<div class="content-wrap content-wrap-login">
+  <div class="content content-login">
+    <h1 class="hx hx-l">Login</h1>
+    <div id="login">
+    <section class="login-wrap">
+      <div class="login">
+        <h2 class="hx hx-m">Existing Users</h2>
+
+          {% form 'customer_login' %}
+            <p>{{ form.errors | default_errors }}</p>
+            <p><input type="email" value="" name="customer[email]" id="customer_email" placeholder="Email address" /></p>
+            <p><input type="password" value="" name="customer[password]" id="customer_password" placeholder="Password" /></p>
+            <p><button class="btn-alt">Login</button></p>
+          {% endform %}
+
+        <div class="forgot">
+          <a href="#" onclick="showRecoverPasswordForm();return false;">Forgot your password?</a>
+        </div>
+      </div>
+    </section>
+    <section class="login-wrap">
+      <div class="login">
+        <h2 class="hx hx-m">New Users</h2>
+        <div class="description">
+          <p>Continue checkout as a guest, no sign-up required. If you like you can create a new user account during the checkout process.</p>
+        </div>
+        <div class="controls">
+          <form action="/cart" method="get">
+          <button class="btn-alt">Continue as Guest</button>
+          </form>
+        </div>
+      </div>
+    </section>
+    </div>
+    <div class="recover-password-wrap">
+      <div id="recover-password" style='display:none'>
+        <h2 class="hx hx-m">Reset password</h2>
+        <div class="description">
+          <p>We will send you an email to reset your password.</p>
+        </div>
+
+        {% form 'recover_customer_password' %}
+          {{ form.errors | default_errors }}
+
+          <p><input type="email" value="" size="30" name="email" id="recover-email" placeholder="Email address" class="large" /></p>
+          <p><button class="btn-alt">Submit</button>
+            <span>Or</span>
+            <a href="#" class="btn" onclick="hideRecoverPasswordForm();return false;">Cancel</a></p>
+        {% endform %}
+      </div>
+    </div>
+  </div>
+</div>
+
+
+
+<script type="text/javascript">
+  function showRecoverPasswordForm() {
+    document.getElementById('login').style.display='none';
+    document.getElementById('recover-password').style.display = 'inline-block';
+  }
+
+  function hideRecoverPasswordForm() {
+    document.getElementById('login').style.display='block';
+    document.getElementById('recover-password').style.display = 'none';
+  }
+
+  if (window.location.hash == '#recover') { showRecoverPasswordForm() }
+</script>

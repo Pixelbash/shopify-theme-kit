@@ -5,3 +5,5 @@ config.shopify = {
   pass : '',
   url : ''
 };
+
+module.exports = config;

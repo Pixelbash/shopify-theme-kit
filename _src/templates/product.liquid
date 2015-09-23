@@ -1,0 +1,98 @@
+{% assign coll = '' %}
+{% for collection in product.collections %} 
+  {% if collection.handle != 'frontpage' %}
+  {% assign coll = collection %}
+  {% endif %}
+{% endfor %}
+
+<script type="text/javascript">
+  var page = {
+    product_json: {{ product | json }},
+    slider_json: [
+      {% for image in product.images %} {
+        url: '{{ image | product_img_url: 'original' }}',
+        colour: '{{ image.alt }}',
+        selected: true
+      }{% if forloop.last == false %},{% endif %}{% endfor %}
+    ]
+  }
+</script>
+
+<div class="content-wrap content-wrap-product">
+  <div class="content content-product">
+    <section class="product-wrap">
+      <div class="product">
+
+        <div class="gallery-wrap">
+          <div class="gallery">
+            {% for image in product.images %}
+              <div class="slide" data-selected="true" data-visible="{% if forloop.first %}true{% endif %}" data-colour="{{ image.alt }}">
+                <div class="background" style="background-image:url({{ image | product_img_url: 'original' }})"></div>
+              </div>
+            {% endfor %}
+          </div>
+        </div>
+
+        <div class="gallery-controls-wrap">
+          <div class="gallery-controls">
+            <div id="next" class="control-next"></div><div id="prev" class="control-prev"></div>
+          </div>
+        </div>
+
+        <div class="description-wrap">
+          <form action="/cart/add" method="post" class="form-product"> 
+            <div class="text-wrap">
+              <div class="text">
+                <div class="title"><h1 class="hx hx-m hx-product">{{ product.title }}</h1></div>
+                <div class="line"></div>
+                <div class="price">
+                  {% if product.available %}
+                    <h4 class="hx hx-m hx-product-price">{{ product.price | money }}</h4>
+                  {% else %}
+                    <h4 class="hx hx-m hx-product-price">Sold Out</h4>
+                  {% endif %}
+                </div>
+                <div class="content">
+                  {{ product.description }}
+                </div>
+                <div class="controls">
+                  <div class="variants">
+                    {% if product.variants.size > 1 %}
+                      <select id="product-select" name="id" class="hidden">
+                        {% for variant in product.variants %}
+                        <option value="{{ variant.id }}" data-available="{% if variant.available == true %}true{% endif %}">{{ variant.title }} - {{ variant.price | money }}</option>
+                        {% endfor %}
+                      </select>
+                  {% else %}
+                      <input type="hidden" name="id" value="{{ product.variants.first.id }}" />      
+                    {% endif %}
+                  </div>
+                  {% if product.available %}
+                  <button class="add-to-cart btn-alt fixed">Add To Cart</button>
+                  {% else %}
+                  <button class="add-to-cart btn-alt fixed disabled" disabled>Sold Out</button>
+                  {% endif %}
+                </div>
+                <div class="attributes-wrap">
+                  <div class="attributes">
+                    <dl>
+                      <dt>Share</dt>
+                      {% assign share_name  = product.title | escape %}
+                      {% assign share_link  = shop.url | append: product.url | escape %}
+                      {% assign share_desc  = product.description | escape %}
+                      {% assign share_image = product.featured_image | product_img_url: 'original' | escape %}
+                      <dd>{% include 'mini-share' %}</dd>
+                      <dt><a href="/pages/shipping">Shipping</a></dt>
+                      <dt><a href="/pages/sizing-guide">Sizing Guide</a></dt>
+                    </dl>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </form>
+        </div>
+
+      </div>
+    </section>
+  </div>
+</div>
