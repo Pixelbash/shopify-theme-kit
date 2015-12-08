@@ -1,0 +1,64 @@
+@mixin link-color($default: $dark,$hover: $dark,$active: $dark) {
+  a {
+    color:$default;
+    &.active,
+    &:hover {
+      color:$hover;
+    }
+    &:active {
+      color:$active;
+    }
+  }
+}
+
+@mixin setup-color($default: $dark,$hover: $dark,$active: $dark) {
+  color:$default;
+  @include link-color($default,$hover,$active);
+}
+
+@mixin setup-paragraph() {
+  dl,ol,p,pre,table,ul {
+    padding-bottom:1em;
+  }
+}
+
+@mixin horizontal-list-justify() {
+  ul {
+    text-align:justify;
+    li {
+      &.blank {
+        content: " ";
+        width:100%;
+      }
+    }
+  }
+}
+
+@mixin text-column-break {
+  -webkit-column-break-before:always;
+  -moz-column-break-before:always;
+  -o-column-break-before:always;
+  -ms-column-break-before:always;
+  break-before:always; 
+}
+
+@mixin text-column-break-avoid {
+  -webkit-column-break-inside:avoid;
+  -moz-column-break-inside:avoid;
+  -o-column-break-inside:avoid;
+  -ms-column-break-inside:avoid;
+  column-break-inside:avoid;
+}
+
+@mixin text-columns($count: 3, $gap: 20px) {
+  -moz-column-count: $count;
+  -moz-column-gap: $gap;
+  -webkit-column-count: $count; 
+  -webkit-column-gap: $gap;
+  .column-nobreak {
+    @include text-column-break-avoid();
+  }
+  .column-break {
+    @include text-column-break();
+  }
+}

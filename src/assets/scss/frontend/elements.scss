@@ -1,0 +1,9 @@
+body>.notification {
+  @include fix-position(0,0,100%,auto,left,bottom);
+  @include cx();
+  @include cx-xs();
+  padding:10px 20px;
+  text-align:center;
+  background:rgba(255,255,255,0.8);
+  z-index:12;
+}

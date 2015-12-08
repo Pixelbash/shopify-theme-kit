@@ -1,0 +1,64 @@
+
+html body {
+  @include sans();
+}
+
+header {
+  &.default {
+    @include wrapper();
+    padding:$space-m 0;
+    .logo {
+      text-align:center;
+    }
+    .menu {
+      @include horizontal-list();
+      text-align:center;
+      ul {
+        li {
+          &+li {
+            margin-left:20px;
+          }
+        }
+      }
+    }
+  }
+}
+
+.container-wrap {
+  @include clearfix();
+  .container {
+    @include wrapper();
+    background:#fff;
+    padding:$space-s $space-m;
+    .header {
+      @include hx();
+      @include hx-l();
+      @include hx-uc();
+      @include bp-m();
+    }
+    .content {
+      @include cx();
+      @include cx-full();
+    }
+  }
+}
+
+footer {
+  &.default {
+    @include wrapper();
+    padding:$space-m 0;
+    text-align:center;
+    .social {
+      @include horizontal-list();
+      @include link-color();
+    }
+    .newsletter {
+      h3 {
+        @include hx();
+        @include hx-uc();
+        @include hx-s();
+        @include bp-xs();
+      }
+    }
+  }
+}

@@ -1,0 +1,87 @@
+/* MASTER */
+$wrap:  1520px; 
+$gutter: 16px;
+
+$light:        #fff;
+$lightestgrey: #e6e6e6;
+$lightgrey:    #b3b3b3;
+$midgrey:      #6d6d6d;
+$darkgrey:     #4d4d4d;
+$darkestgrey:  #333333;
+$dark:         #141414;
+
+$background: #fff;
+$green:      rgb(111,190,68);
+$blue:       rgb(51,77,90); 
+$accent:     $blue; 
+
+$space-xxl: 60px;
+$space-xl:  50px;
+$space-l:   40px;
+$space-m:   30px;
+$space-s:   20px;
+$space-xs:  10px; 
+ 
+$font-xxl: 40px;
+$font-xl:  34px; 
+$font-l:   30px;
+$font-m:   20px;
+$font-s:   13px;
+$font-xs:  12px; 
+$font-xxs: 11px; 
+
+$font-lh-xxl: 48px; 
+$font-lh-xl:  36px; 
+$font-lh-l:   32px; 
+$font-lh-m:   25px; 
+$font-lh-s:   20px; 
+$font-lh-xs:  20px; 
+$font-lh-xxs: 20px; 
+
+$d : './';
+$images : './img/';
+ 
+//Base framework
+@import 'utils/reset.scss';
+@import 'utils/grid.scss'; 
+@import 'utils/helpers.scss';
+@import 'utils/css3.scss';
+@import 'utils/normalise.scss'; 
+@import 'utils/typography.scss'; 
+
+//Theme specific functions
+@import 'frontend/fonts/fonts.scss';
+@import 'frontend/helpers.scss';
+@import 'frontend/typography.scss';
+@import 'frontend/forms.scss';
+@import 'frontend/elements.scss';
+
+//Theme specific styling
+@import 'frontend/container-wrap.scss';
+@import 'frontend/container.scss';
+@import 'frontend/header.scss';
+@import 'frontend/footer.scss'; 
+@import 'frontend/lightbox.scss';
+@import 'frontend/blocks.scss'; 
+@import 'frontend/responsive.scss';
+
+// Main 
+html,body { margin:0;padding:0; }
+html { height:100%; }
+
+body {
+  min-height:100%;
+  position:relative;
+  background:$background;
+  @include sans();
+}
+
+a {
+  &:hover,
+  &:active {
+    text-decoration:none;
+  }
+  &:hover {
+    
+  }
+}

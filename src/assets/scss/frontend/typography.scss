@@ -1,0 +1,128 @@
+//heading styles
+@mixin hx() {
+  @include hx-m();
+  @include hx-dark();
+  margin:0;
+  padding:0;
+  font-weight:700;
+  word-wrap: break-word;
+  i,em {
+    text-transform:none;
+    font-style:italic;
+  }
+}
+
+//size
+@mixin hx-xxl()    {font-size:$font-xxl;line-height:$font-lh-xxl;}
+@mixin hx-xl()     {font-size:$font-xl;line-height:$font-lh-xl;}
+@mixin hx-l()      {font-size:$font-l;line-height:$font-lh-l;}
+@mixin hx-m()      {font-size:$font-m;line-height:$font-lh-m;}
+@mixin hx-s()      {font-size:$font-s;line-height:$font-lh-s;}
+@mixin hx-xs()     {font-size:$font-xs;line-height:$font-lh-xs;}
+@mixin hx-xxs()    {font-size:$font-xxs;line-height:$font-lh-xxs;}
+//colour
+@mixin hx-light()        {@include setup-color($light);}
+@mixin hx-lightestgrey() {@include setup-color($lightestgrey);}
+@mixin hx-lightgrey()    {@include setup-color($lightgrey);}
+@mixin hx-midgrey()      {@include setup-color($midgrey);}
+@mixin hx-darkgrey()  {@include setup-color($darkgrey);}
+@mixin hx-darkestgrey()  {@include setup-color($darkestgrey);}
+@mixin hx-dark()         {@include setup-color($dark);}
+
+@mixin hx-montserrat() {@include montserrat();}
+@mixin hx-blue() {@include setup-color($blue);}
+@mixin hx-green() {@include setup-color($green);}
+//other
+@mixin hx-lc()     {text-transform:none;}
+@mixin hx-uc()     {text-transform:uppercase;}
+
+@mixin hx-style1 {
+  @include hx();
+  @include hx-xs();
+  @include hx-darkestgrey();
+  @include hx-uc();
+  @include sans();
+}
+
+@mixin hx-style2 {
+}
+
+//content styling
+@mixin cx() {
+  @include cx-m();
+  letter-spacing:0;
+  margin:0;
+  padding:0;
+  font-weight:400; 
+  word-wrap: break-word;
+  i,em {
+    text-transform:none;
+    font-style:italic;
+  }
+}
+
+@mixin cx-xxl()    {font-size:$font-xxl;line-height:$font-lh-xxl;}
+@mixin cx-xl()     {font-size:$font-xl;line-height:$font-lh-xl;}
+@mixin cx-l()      {font-size:$font-l;line-height:$font-lh-l;}
+@mixin cx-m()      {font-size:$font-m;line-height:$font-lh-m;}
+@mixin cx-s()      {font-size:$font-s;line-height:$font-lh-s;}
+@mixin cx-xs()     {font-size:$font-xs;line-height:$font-lh-xs;}
+@mixin cx-xxs()    {font-size:$font-xxs;line-height:$font-lh-xxs;}
+
+@mixin cx-lc()     {text-transform:none;}
+@mixin cx-uc()     {text-transform:uppercase;}
+
+@mixin cx-light()        {@include setup-color($light);}
+@mixin cx-lightestgrey() {@include setup-color($lightestgrey);}
+@mixin cx-lightgrey()    {@include setup-color($lightgrey);}
+@mixin cx-midgrey()      {@include setup-color($midgrey);}
+@mixin cx-darkgrey()     {@include setup-color($darkgrey);}
+@mixin cx-darkestgrey()     {@include setup-color($darkestgrey);}
+@mixin cx-dark()         {@include setup-color($dark);}
+
+
+@mixin cx-full() {
+  @include cx();
+  @include cx-xs();
+  @include cx-darkestgrey();
+  @include setup-paragraph();
+  h1,h2,h3,h4,h5,h6 {
+    @include hx-style1();
+    padding-bottom:0.5em;
+  }
+  b,strong {
+    font-weight:600;
+  }
+  i,em {
+    font-style:italic;
+  }
+  a {
+    text-decoration: underline;
+    &:hover {
+      color:inherit;
+    }
+  }
+  ul {
+    li {
+      margin-left:18px;
+      &:before {
+        color:$darkestgrey;
+        content:"—";
+        margin-left:-18px;
+        padding-right:6px
+      }
+    }
+  }
+}
+
+html body {
+  font-size:16px;
+  line-height:18px;
+  color:#000;
+  @include sans();
+}
+
+a {
+  text-decoration:none;
+  cursor:pointer;
+}

@@ -1,18 +1,27 @@
 {
-  "name": "shopimake",
-  "version": "1.0.0",
-  "homepage": "http://test.myshopify.com",
-  "license": "MIT",
+  "name": "marasommer.pxl.nz",
+  "description": "",
+  "main": "index.js",
+  "authors": [
+    "Joe S <joe@pixelbash.co.nz>"
+  ],
+  "license": "ISC",
+  "moduleType": [],
+  "homepage": "",
   "private": true,
   "ignore": [
     "**/.*",
     "node_modules",
-    "js",
+    "bower_components",
+    "js/lib",
     "test",
     "tests"
   ],
   "dependencies": {
-    "jquery": "~2.1.3",
-    "modernizr": "~2.7.1"
+    "jquery": "~2.1.4",
+    "packery": "~1.4.3",
+    "radio": "~0.2.0",
+    "underscore": "~1.8.3",
+    "radiojs": "~0.2.0"
   }
 }

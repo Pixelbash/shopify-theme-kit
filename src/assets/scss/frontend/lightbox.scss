@@ -1,0 +1,30 @@
+
+
+.lightbox-wrap {
+  .lightbox-box {
+    .close {
+      position:fixed;
+      top:40px;
+      right:40px;
+      width:auto;
+      height:auto;
+      cursor:pointer;
+      @include cx();
+      @include cx-xs();
+      @include cx-darkestgrey();
+      @include sans();
+    }
+    &.lightbox-flash {
+    }
+    &.lightbox-error {
+    }
+    &.lightbox-help {
+    }
+    &.lightbox-currency { 
+    }
+    &.lightbox-post-share {
+    }
+    &.lightbox-product-gallery {
+    }
+  }
+}

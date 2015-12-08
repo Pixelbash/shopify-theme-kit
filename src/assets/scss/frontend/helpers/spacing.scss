@@ -1,0 +1,13 @@
+//bottom padding
+@mixin bp-xl()    {padding-bottom:$space-xl;}
+@mixin bp-l()     {padding-bottom:$space-l;}
+@mixin bp-m()     {padding-bottom:$space-m;}
+@mixin bp-s()     {padding-bottom:$space-s;}
+@mixin bp-xs()    {padding-bottom:$space-xs;}
+
+//bottom margin
+@mixin bm-xl()    {margin-bottom:$space-xl;}
+@mixin bm-l()     {margin-bottom:$space-l;}
+@mixin bm-m()     {margin-bottom:$space-m;}
+@mixin bm-s()     {margin-bottom:$space-s;}
+@mixin bm-xs()    {margin-bottom:$space-xs;}

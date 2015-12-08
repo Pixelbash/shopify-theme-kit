@@ -1,0 +1,12 @@
+header.default {
+  @include wrapper();
+  padding:40px 20px;
+  background:url('../img/divider.png') center bottom repeat-x;
+  background-size:12px, auto, auto;
+  margin-bottom:45px;
+  .logo {
+    img {
+      zoom:40%;
+    }
+  }
+}

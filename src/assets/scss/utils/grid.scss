@@ -1,0 +1,42 @@
+* {	
+  -moz-box-sizing: border-box;
+  -webkit-box-sizing: border-box;	
+  box-sizing: border-box;
+}
+
+@mixin columnConstructor($count, $percentage, $gutter) {
+  $calcPercentage: (($percentage/$count) * 100) + 0%;
+  float:left;
+  padding:0 $gutter;
+  width: #{$calcPercentage};  
+  &.compact {padding:0;}
+}
+
+@mixin offsetConstructor($count, $percentage, $gutter) {
+  $calcPercentage: (($percentage/$count) * 100) + 0%;
+  margin-left: #{$calcPercentage};  
+}
+
+@mixin span($num:1,$gutter : $gutter) {
+  @include columnConstructor(12,$num, $gutter);
+}
+
+@mixin offset($num:1,$gutter : $gutter) {
+  @include offsetConstructor(12,$num, $gutter);
+}
+
+@mixin spanX($count, $num:1,$gutter : $gutter) {
+  @include columnConstructor($count, $num, $gutter);
+}
+
+@mixin offsetX($count, $num:1,$gutter : $gutter) {
+  @include offsetConstructor($count, $num, $gutter);
+}
+
+@mixin inline-span($num:1,$gutter : $gutter) {
+  @include span($num,$gutter);
+  text-align:left;
+  float:none;
+  display:inline-block;
+  vertical-align:top;
+}

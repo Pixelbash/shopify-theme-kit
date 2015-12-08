@@ -1,0 +1,4 @@
+section.container-wrap {
+  min-height:600px;
+  @include clearfix();
+} 

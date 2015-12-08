@@ -1,0 +1,55 @@
+@mixin pv($p,$v) {
+	#{$p}:$v;
+}
+
+@mixin wrapper($width:$wrap) { 
+  max-width:$width; 
+  margin: 0 auto;
+}
+
+@mixin horizontal-list() {
+  list-style:none;
+  margin:0;
+  padding:0;
+  li {
+    margin:0;
+    padding:0;
+    display:inline-block;
+    *display:inline; 
+  }
+}
+
+@mixin clearfix() {
+  &:before,
+  &:after {
+    content: " ";
+    display: block;
+    height: 0;
+    clear: both;
+    visibility: hidden;
+  }
+}
+
+@mixin appearance-none {
+  background:transparent;
+  -webkit-appearance: none;
+  -moz-appearance: none;
+  appearance: none;
+  border:none;
+  box-shadow:none;
+}
+
+@mixin abs-position($dSide: 0px, $dVert: 0px, $width:10px, $height: 10px, $side: left, $vert: top, $zIndex: 10) {
+  display:block;
+  position:absolute;
+  @include pv($side, $dSide);
+  @include pv($vert, $dVert);
+  width:$width;
+  height:$height;
+  z-index:$zIndex;
+}
+
+@mixin fix-position($dSide: 0px, $dVert: 0px, $width:10px, $height: 10px, $side: left, $vert: top, $zIndex: 10) {
+  @include abs-position($dSide,$dVert,$width,$height,$side,$vert,$zIndex);
+  position:fixed;
+}

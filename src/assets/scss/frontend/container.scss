@@ -1,0 +1,13 @@
+@import 'container/index.scss';
+
+section.container {
+  @include wrapper();
+  @include clearfix();
+  padding-left:20px;
+  padding-right:20px;
+
+  //Page
+  &[data-template=page-index] { 
+    @include container-index();
+  } 
+}

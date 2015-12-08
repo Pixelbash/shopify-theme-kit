@@ -1,0 +1,59 @@
+footer.default {
+  background:$blue;
+  .inner {
+    @include cx();
+    @include cx-s();
+    @include cx-light();
+    @include wrapper();
+    @include clearfix();
+    padding:$space-m 20px;
+    a {
+      &:hover {
+        color:$green;
+      }
+    }
+    .legal {
+      float:left;
+      @include bp-s();
+      .credit {
+        ul {
+          @include horizontal-list();
+          li {
+            + li {
+              &:before {
+                content:' | ';
+              }
+            }
+          }
+        }
+      }
+    }
+    .info {
+      float:right;
+      text-align:right;
+      .logo {
+        @include bm-s();
+        img {
+          zoom:50%;
+        } 
+      }
+      .social {
+        ul {
+          @include horizontal-list();
+          li {
+
+            img {
+              zoom:50%;
+            }
+            &:hover {
+              opacity:.9;
+            }
+            + li {
+              margin-left:10px;
+            }
+          }
+        }
+      }
+    }
+  }
+}

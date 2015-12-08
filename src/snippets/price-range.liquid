@@ -1,0 +1,9 @@
+{% if product.available %}
+  {% if product.price_max > product.price %}
+    {% include 'price' with product.price_min %} - {% include 'price' with product.price_max %}
+      {% else %}
+    {% include 'price' with product.price %}
+  {% endif %}
+{% else %}
+  <span>Sold Out</span>
+{% endif %}

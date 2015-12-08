@@ -1,0 +1,175 @@
+[
+  {
+    "name": "About information",
+    "settings": [
+      {
+        "type":  "text",
+        "id":    "about_1_title",
+        "label": "Section 1 title"
+      },
+      {
+        "type":  "textarea",
+        "id":    "about_1_content",
+        "label": "Section 1 content"
+      },
+      {
+        "type":  "text",
+        "id":    "about_2_title",
+        "label": "Section 2 title"
+      }, 
+      {  
+        "type":  "textarea",
+        "id":    "about_2_content",
+        "label": "Section 2 content" 
+      },
+      {
+        "type":  "text",
+        "id":    "about_3_title", 
+        "label": "Section 3 title"
+      },
+      {
+        "type":  "textarea",
+        "id":    "about_3_content",
+        "label": "Section 3 content"
+      },
+      {
+        "type":  "text",
+        "id":    "about_4_title",
+        "label": "Section 4 title"
+      },
+      {
+        "type":  "textarea",
+        "id":    "about_4_content",
+        "label": "Section 4 content"
+      }
+    ]
+  },
+  {
+    "name": "Footer information",
+    "settings": [
+      {
+        "type":  "text",
+        "id":    "footer_1_title",
+        "label": "Section 1 title"
+      },
+      {
+        "type":  "textarea",
+        "id":    "footer_1_content",
+        "label": "Section 1 content"
+      },
+      {
+        "type":  "text",
+        "id":    "footer_2_title",
+        "label": "Section 2 title"
+      }, 
+      {
+        "type":  "textarea",
+        "id":    "footer_2_content",
+        "label": "Section 2 content"
+      },
+      {
+        "type":  "text",
+        "id":    "footer_3_title",
+        "label": "Section 3 title"
+      },
+      {
+        "type":  "textarea",
+        "id":    "footer_3_content",
+        "label": "Section 3 content"
+      },
+      {
+        "type":  "text",
+        "id":    "footer_4_title",
+        "label": "Section 4 title"
+      },
+      {
+        "type":  "textarea",
+        "id":    "footer_4_content",
+        "label": "Section 4 content"
+      },
+      { 
+        "type":  "text",
+        "id":    "footer_5_title",
+        "label": "Section 5 title"
+      },
+      {
+        "type":  "textarea",
+        "id":    "footer_5_content",
+        "label": "Section 5 content"
+      }
+    ]
+  },
+  {
+    "name": "Collection images",
+    "settings": [
+      {
+        "type":  "image",
+        "id":    "collection_1_image.png",
+        "label": "Image 1",
+        "max-width": 2048,
+        "max-height": 800
+      },
+      {
+        "type":  "image",
+        "id":    "collection_2_image.png",
+        "label": "Image 2",
+        "max-width": 2048,
+        "max-height": 800
+      },
+      {
+        "type":  "image", 
+        "id":    "collection_3_image.png",
+        "label": "Image 3",
+        "max-width": 2048,
+        "max-height": 800 
+      }
+    ]
+  },
+  {
+    "name": "Landing images",
+    "settings": [
+      {
+        "type":  "image",
+        "id":    "landing_1_image.jpg",
+        "label": "Image 1",
+        "max-width": 2048,
+        "max-height": 1800
+      },
+      {
+        "type":  "image",
+        "id":    "landing_2_image.jpg",
+        "label": "Image 2",
+        "max-width": 2048,
+        "max-height": 1800
+      },
+      {
+        "type":  "image",
+        "id":    "landing_3_image.jpg",
+        "label": "Image 3",
+        "max-width": 2048,
+        "max-height": 1800 
+      },
+      {
+        "type":  "image",
+        "id":    "landing_4_image.jpg",
+        "label": "Image 4",
+        "max-width": 2048,
+        "max-height": 1800 
+      },
+      {
+        "type":  "image",
+        "id":    "landing_5_image.jpg",
+        "label": "Image 5",
+        "max-width": 2048,
+        "max-height": 1800 
+      },
+      {
+        "type":  "image",
+        "id":    "landing_6_image.jpg",
+        "label": "Image 6",
+        "max-width": 2048,
+        "max-height": 1800 
+      }
+    ]
+  }
+] 

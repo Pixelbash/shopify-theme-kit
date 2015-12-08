@@ -1,0 +1,77 @@
+@mixin container-index() {
+  section.cta {
+    text-align:center;
+    margin-top:$space-xl;
+    margin-bottom:$space-xl;
+    .heading {
+      @include hx();
+      @include hx-l();
+      @include hx-uc();
+      @include montserrat();
+      @include bm-s();
+      span {
+        @include hx-green();
+      }
+    }
+    .details {
+      nav {
+        ul {
+          @include horizontal-list();
+          li {
+            @include cx();
+            @include cx-m();
+            @include cx-uc();
+            font-weight:700;
+            + li {
+              margin-left:10px;
+              padding-left:10px;
+              border-left:1px solid $green;
+            }
+          }
+        }
+      }
+    }
+  }
+  section.newsletter {
+    text-align:center;
+    .success,
+    .error {
+      padding-bottom:5px;
+      display:none;
+    }
+    .instructions {
+      @include cx();
+      @include cx-s();
+      @include bm-s();
+    }
+    .email {
+      @include bm-s();
+      input {
+        border:1px solid #000;
+        padding:5px 10px;
+        line-height:30px;
+        height:40px;
+        width:600px;
+        max-width:100%;
+      }
+    }
+    .subscribe {
+      @include bm-s();
+    }
+  }
+  .decorator {
+    height:50px;
+    background:url('../img/divider.png') center repeat-x;
+    background-size:12px, auto, auto;
+    position:relative;
+    @include bm-l();
+    .logo {
+      display:block;
+      margin:0 auto;
+      width:50px;
+      height:50px;
+      background:#fff url('../img/logo-divider.png') center no-repeat;
+      background-size:39px, auto, auto;
+    }
+  }
+} 
