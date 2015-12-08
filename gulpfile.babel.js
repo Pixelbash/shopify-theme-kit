@@ -33,13 +33,14 @@ var task_names = ['img','fnt', 'locales','scss','es6','bower','snippets','templa
 var copy_tasks = ['fnt', 'locales','snippets','templates','layout','config'];
 
 gulp.task('clean', function(){
-  console.log(config.paths['img']);
+  console.log('Running clean');
   for(var task_name of task_names) {
     rimraf(config.paths[task_name]['dest']);
   }
 });
 
 gulp.task("img", () => {
+  console.log('Running img');
   return gulp.src(paths.img.src)
     .pipe(changed("dist/img"))
     .pipe(image({
@@ -51,6 +52,7 @@ gulp.task("img", () => {
 });
 
 gulp.task('scss', () => {
+  console.log('Running es6');
   return gulp.src(paths.scss.src)
     .pipe(sass({indentedSyntax:false}).on('error', sass.logError))
     .pipe(sourcemaps.init())
@@ -60,6 +62,7 @@ gulp.task('scss', () => {
 });
 
 gulp.task('bower', () => {
+  console.log('Running bower');
   return gulp.src(paths.bower.src
   , { base: './js/lib' })
   .pipe(concat('plugins.js'))
@@ -68,18 +71,27 @@ gulp.task('bower', () => {
 });
 
 gulp.task('es6', () => {
-    return browserify({entries: paths.es6.src, extensions: ['.es6'], debug: true})
-    .transform(babelify)
-    .bundle()
-    .pipe(source('init.js'))
-    .pipe(gulp.dest(paths.es6.dest));
+  console.log('Running es6');
+  return browserify({entries: paths.es6.src, extensions: ['.es6'], debug: true})
+  .transform(babelify)
+  .bundle()
+  .pipe(source('init.js'))
+  .pipe(gulp.dest(paths.es6.dest));
 });
 
-for(var task_name of copy_tasks) {
+
+var setupTask = (task_name) => {
   gulp.task(task_name, () => {
+    console.log('running ' + task_name);
     return gulp.src(paths[task_name].src)
+      .pipe(rename({dirname: ''}))
+      .pipe(changed(paths[task_name].dest))
       .pipe(gulp.dest(paths[task_name].dest));
   });
+}
+
+for(var name of copy_tasks) {
+  setupTask(name);
 }
 
 gulp.task('shopify_watch', () => {
@@ -91,7 +103,8 @@ gulp.task('shopify_watch', () => {
 
 gulp.task('watch', () => {
   for(var task_name of task_names) {
-    gulp.watch([paths[task_name].watch],[task_name]);
+    console.log('Watching ' + paths[task_name].watch);
+    gulp.watch(paths[task_name].watch,[task_name]);
   }
   gulp.start('shopify_watch');
 });
