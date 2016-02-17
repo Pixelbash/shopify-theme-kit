@@ -25,7 +25,7 @@
 @mixin hx-lightestgrey() {@include setup-color($lightestgrey);}
 @mixin hx-lightgrey()    {@include setup-color($lightgrey);}
 @mixin hx-midgrey()      {@include setup-color($midgrey);}
-@mixin hx-darkgrey()  {@include setup-color($darkgrey);}
+@mixin hx-darkgrey()     {@include setup-color($darkgrey);}
 @mixin hx-darkestgrey()  {@include setup-color($darkestgrey);}
 @mixin hx-dark()         {@include setup-color($dark);}
 
@@ -44,8 +44,7 @@
   @include sans();
 }
 
-@mixin hx-style2 {
-}
+@mixin hx-style2 {}
 
 //content styling
 @mixin cx() {

@@ -1,0 +1,10 @@
+{% capture name %}{% include 'shortcode-render' render:'name' default:'name' %}{% endcapture %}
+{% capture location %}{% include 'shortcode-render' render:'location' default:'' %}{% endcapture %}
+{% capture website %}{% include 'shortcode-render' render:'website' default:'' %}{% endcapture %}
+<div class="block">
+  <div class="name">{{ name }}</div>
+  <div class="location">{{ location }}</div>
+  {% unless website == '' %}
+  <div class="website"><a href="{{ website }}" target="_blank">{{ website }}</a></div>
+  {% endunless %}
+</div>

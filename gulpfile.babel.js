@@ -12,7 +12,6 @@ import watch from 'gulp-watch';
 import image from 'gulp-image-optimization';
 import gulpShopify from 'gulp-shopify-upload';
 
-
 import browserSync from 'browser-sync';
 
 import source from 'vinyl-source-stream';
@@ -21,9 +20,10 @@ import browserify from 'browserify';
 import rimraf from 'rimraf';
 
 import Config from './config';
-var config = new Config();
-var paths  = config.paths;
-var shopify  = config.shopify;
+
+var config  = new Config();
+var paths   = config.paths;
+var shopify = config.shopify;
 
 gulp.task('browser-sync', function () {
   browserSync(config.browsersync);
@@ -44,9 +44,9 @@ gulp.task("img", () => {
   return gulp.src(paths.img.src)
     .pipe(changed("dist/img"))
     .pipe(image({
-        optimizationLevel: 5,
-        progressive: true,
-        interlaced: true
+      optimizationLevel: 5,
+      progressive: true,
+      interlaced: true
     }))
     .pipe(gulp.dest(paths.img.dest));
 });
@@ -79,7 +79,6 @@ gulp.task('es6', () => {
   .pipe(gulp.dest(paths.es6.dest));
 });
 
-
 var setupTask = (task_name) => {
   gulp.task(task_name, () => {
     console.log('running ' + task_name);
@@ -99,6 +98,13 @@ gulp.task('shopify_watch', () => {
   .pipe(gulpShopify(shopify.api_key, shopify.pass, shopify.url, shopify.theme_id, {
       "basePath" : 'dist'
     }));
+});
+
+gulp.task('run', () => {
+  for(var task_name of task_names) {
+    console.log('Watching ' + paths[task_name].watch);
+    gulp.start([task_name]);
+  }
 });
 
 gulp.task('watch', () => {

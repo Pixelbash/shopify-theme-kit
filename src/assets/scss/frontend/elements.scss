@@ -1,4 +1,4 @@
-body>.notification {
+body > .notification {
   @include fix-position(0,0,100%,auto,left,bottom);
   @include cx();
   @include cx-xs();

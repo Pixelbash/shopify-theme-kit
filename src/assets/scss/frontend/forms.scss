@@ -31,7 +31,6 @@ button {
   @include cx();
   @include cx-uc();
   @include cx-light();
-  @include montserrat();
   font-size:16px;
   padding:10px 30px;
   background:$green;

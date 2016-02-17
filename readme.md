@@ -1,5 +1,23 @@
-# Use your favourite tools
-This workflow is designed to let you use gulp to automate as much of the fiddly stuff involved in editing shopify themes as possible. It comes with tools from my workflow like less and es6 but it is easy to swap these out if needed.
+#Kickass shopify development
+Shopify is great, but developing themes in a browser is less so. This kit lets you have your cake and eat it too.
+
+##Features
+- Minified Images
+- Minified SCSS, ES6
+- Theme shortcodes
+- AJAX slideout cart
+- Automatic uploading with file watching
+- Upload ready dist folder, just zip and upload
+
+##Install and run
+- git clone
+- npm install
+- bower install
+- gulp
+
+##Todo
+- Using shopify variables in compiled SCSS
+- Smaller JS libraries
 
 ##v3.0 Changes
 - Gulpfile now uses ES6
@@ -9,9 +27,3 @@ This workflow is designed to let you use gulp to automate as much of the fiddly 
 - JS replaced with ES6 (See powerhouse theme for details)
 - Cleaned up folder structure (src and dist)
 - Cleaned up a bunch of niggly issues
-
-##Installation
-- Git clone
-- npm install
-- bower install
-- Gulp

@@ -1,0 +1,19 @@
+<div class="block" data-available="{% if product.available == true %}available{% else %}sold{% endif %}"><div class="inner">
+  <!-- image -->
+  <div class="image">
+    <img src="{{ product.featured_image | product_img_url: 'master' }}" alt="{{ product.title }}">
+  </div>
+
+  <!-- description -->
+  <div class="details">
+    <a href="{{ product.url }}" class="cover"></a>
+    <div class="inner">
+      <div class="link"><a href="{{ product.url }}">View Details</a></div>
+      <div class="title">
+        {% assign titles = product.title | split: "|" %}
+        <h2>{{ titles[0] }}</h2>
+      </div>
+      <div class="price">{% include 'price-range' %}</div>
+    </div>
+  </div>
+</div></div> 

@@ -1,9 +1,83 @@
-var config = {};
+export default class Config {
+  constructor() {
+    var dirs = {
+      src: 'src',
+      dest: 'dist'
+    };
 
-config.shopify = {
-  api_key : '',
-  pass : '',
-  url : ''
-};
+    this.shopify = {
+      api_key : '',
+      pass : '',
+      url : 'example.myshopify.com',
+      theme_id : null
+    };
 
-module.exports = config;
+    this.paths = {
+      scss : {
+        watch: `${dirs.src}/assets/scss/**/*`,
+        src: `${dirs.src}/assets/scss/init.scss`,
+        dest: `${dirs.dest}/assets/`
+      },
+      img : {
+        watch: `${dirs.src}/assets/img/**/*`,
+        src: `${dirs.src}/assets/img/**/*.{jpg,png,ico}`,
+        dest: `${dirs.dest}/assets/`
+      },
+      fnt : {
+        watch: `${dirs.src}/assets/fnt/**/*`,
+        src: `${dirs.src}/assets/fnt/**/*`,
+        dest: `${dirs.dest}/assets/`
+      },
+      bower : {
+        watch: `${dirs.src}/assets/js/lib/**/*`,
+        src: [
+          `${dirs.src}/assets/js/lib/jquery/dist/jquery.js`,
+          `${dirs.src}/assets/js/lib/radio/radio.js`,
+          `${dirs.src}/assets/js/lib/bxSlider/dist/jquery.bxslider.js`,
+          `${dirs.src}/assets/js/lib/underscore/underscore.js`,
+        ],
+        dest: `${dirs.dest}/assets/`
+      },
+      es6 : {
+        watch: `${dirs.src}/assets/es6/**/*`,
+        src: `${dirs.src}/assets/es6/init.js`,
+        dest: `${dirs.dest}/assets/`
+      },
+      locales : {
+        watch: `${dirs.src}/locales/**/*`,
+        src: `${dirs.src}/locales/**/*`,
+        dest: `${dirs.dest}/locales/`
+      },
+      snippets : {
+        watch: `${dirs.src}/snippets/**/*`,
+        src: `${dirs.src}/snippets/**/*`,
+        dest: `${dirs.dest}/snippets/`
+      },
+      templates : {
+        watch: `${dirs.src}/templates/**/*`,
+        src: `${dirs.src}/templates/**/*`,
+        dest: `${dirs.dest}/templates/`
+      },
+      layout : {
+        watch: `${dirs.src}/layout/**/*`,
+        src: `${dirs.src}/layout/**/*`,
+        dest: `${dirs.dest}/layout/`
+      },
+      config : {
+        watch: `${dirs.src}/config/**/*`,
+        src: `${dirs.src}/config/**/*`,
+        dest: `${dirs.dest}/config/`
+      },
+      shopify : {
+        src : [
+          `${dirs.dest}/assets/**/*`,
+          `${dirs.dest}/layout/**/*`,
+          `${dirs.dest}/config/**/*`,
+          `${dirs.dest}/snippets/**/*`,
+          `${dirs.dest}/templates/**/*`,
+          `${dirs.dest}/locales/**/*`,
+        ]
+      }
+    };
+  }
+}

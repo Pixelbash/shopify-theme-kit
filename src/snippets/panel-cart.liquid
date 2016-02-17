@@ -1,0 +1,22 @@
+<section id="cart_panel" class="cart-panel">
+  <div data-pub="cart-panel-close" class="close"></div>
+  <div class="inner">
+    <div class="heading">
+      <h2>Cart <span>Pay Now</span></h2>
+    </div>
+    <div class="cart">
+      <div class="items" data-sub="cart-items">
+      </div>
+      <div class="totals">
+        TOTAL
+      </div>
+      <div class="price">
+        <span data-sub="cart-total">{{ cart.total_price | money }}</span>
+      </div>
+    </div>
+    <div class="controls">
+      <a href="/checkout">Pay Now</a>
+    </div>
+  </div>
+</section>
+

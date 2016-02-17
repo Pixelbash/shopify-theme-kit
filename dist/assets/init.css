@@ -1,4 +1,3 @@
-@charset "UTF-8";
 /* MASTER */
 /* http://meyerweb.com/eric/tools/css/reset/ 
    v2.0 | 20110126
@@ -151,83 +150,6 @@ textarea {
 .clearfix:after {
   clear: both; }
 
-@font-face {
-  font-family: 'icons';
-  src: url("../fnt/social/icons.eot?1225236");
-  src: url("../fnt/social/icons.eot?1225236#iefix") format("embedded-opentype"), url("../fnt/social/icons.woff?1225236") format("woff"), url("../fnt/social/icons.ttf?1225236") format("truetype"), url("../fnt/social/icons.svg?1225236#icons") format("svg");
-  font-weight: normal;
-  font-style: normal; }
-
-/* Chrome hack: SVG is rendered more smooth in Windozze. 100% magic, uncomment if you need it. */
-/* Note, that will break hinting! In other OS-es font will be not as sharp as it could be */
-/*
-@media screen and (-webkit-min-device-pixel-ratio:0) {
-  @font-face {
-    font-family: 'icons';
-    src: url('/assets/fonts/social/icons.svg?1225236#icons') format('svg');
-  }
-}
-*/
-[class^="icon-"]:before, [class*=" icon-"]:before {
-  font-family: "icons";
-  font-style: normal;
-  font-weight: normal;
-  speak: none;
-  display: inline-block;
-  text-decoration: inherit;
-  width: 1em;
-  margin-right: .2em;
-  text-align: center;
-  /* opacity: .8; */
-  /* For safety - reset parent styles, that can break glyph codes*/
-  font-variant: normal;
-  text-transform: none;
-  /* fix buttons height, for twitter bootstrap */
-  line-height: 1em;
-  /* Animation center compensation - margins should be symmetric */
-  /* remove if not needed */
-  margin-left: .2em;
-  /* you can be more comfortable with increased icons size */
-  /* font-size: 120%; */
-  font-size: 80%;
-  /* Uncomment for 3D effect */
-  /* text-shadow: 1px 1px 1px rgba(127, 127, 127, 0.3); */ }
-
-.icon-tumblr:before {
-  content: '\e800'; }
-
-/* '' */
-.icon-mail:before {
-  content: '\e801'; }
-
-/* '' */
-.icon-pinterest:before {
-  content: '\e802'; }
-
-/* '' */
-.icon-facebook:before {
-  content: '\e803'; }
-
-/* '' */
-.icon-twitter:before {
-  content: '\e804'; }
-
-/* '' */
-.icon-linkedin:before {
-  content: '\e805'; }
-
-/* '' */
-.icon-instagram:before {
-  content: '\e806'; }
-
-/* '' */
-@font-face {
-  font-family: 'montserrat';
-  src: url("../fnt/montserrat/montserrat-regular-webfont.eot");
-  src: url("../fnt/montserrat/montserrat-regular-webfont.eot?#iefix") format("embedded-opentype"), url("../fnt/montserrat/montserrat-regular-webfont.woff2") format("woff2"), url("../fnt/montserrat/montserrat-regular-webfont.woff") format("woff"), url("../fnt/montserrat/montserrat-regular-webfont.ttf") format("truetype"), url("../fnt/montserrat/montserrat-regular-webfont.svg#montserratregular") format("svg");
-  font-weight: normal;
-  font-style: normal; }
-
 :focus {
   outline: none;
   outline-width: 1px;
@@ -238,8 +160,8 @@ html body {
   font-size: 16px;
   line-height: 18px;
   color: #000;
-  font-family: 'Ubuntu', Helvetica Neue,Helvetica,Arial,sans-serif;
-  font-weight: 300; }
+  font-family: Helvetica Neue,Helvetica,Arial,sans-serif;
+  font-weight: 600; }
 
 a {
   text-decoration: none;
@@ -264,8 +186,8 @@ a.button {
   word-wrap: break-word;
   font-size: 20px;
   line-height: 25px;
-  font-family: 'Ubuntu', Helvetica Neue,Helvetica,Arial,sans-serif;
-  font-weight: 300;
+  font-family: Helvetica Neue,Helvetica,Arial,sans-serif;
+  font-weight: 600;
   border-radius: 0;
   background-clip: padding-box; }
   input i, input em,
@@ -310,8 +232,6 @@ button {
   word-wrap: break-word;
   text-transform: uppercase;
   color: #fff;
-  font-family: 'montserrat', Helvetica Neue,Helvetica,Arial,sans-serif;
-  font-weight: 400;
   font-size: 16px;
   padding: 10px 30px;
   background: #6fbe44; }
@@ -391,193 +311,6 @@ section.container {
     height: 0;
     clear: both;
     visibility: hidden; }
-  section.container[data-template=page-index] section.cta {
-    text-align: center;
-    margin-top: 50px;
-    margin-bottom: 50px; }
-    section.container[data-template=page-index] section.cta .heading {
-      font-size: 20px;
-      line-height: 25px;
-      color: #141414;
-      margin: 0;
-      padding: 0;
-      font-weight: 700;
-      word-wrap: break-word;
-      font-size: 30px;
-      line-height: 32px;
-      text-transform: uppercase;
-      font-family: 'montserrat', Helvetica Neue,Helvetica,Arial,sans-serif;
-      font-weight: 400;
-      margin-bottom: 20px; }
-      section.container[data-template=page-index] section.cta .heading a {
-        color: #141414; }
-        section.container[data-template=page-index] section.cta .heading a.active, section.container[data-template=page-index] section.cta .heading a:hover {
-          color: #141414; }
-        section.container[data-template=page-index] section.cta .heading a:active {
-          color: #141414; }
-      section.container[data-template=page-index] section.cta .heading i, section.container[data-template=page-index] section.cta .heading em {
-        text-transform: none;
-        font-style: italic; }
-      section.container[data-template=page-index] section.cta .heading span {
-        color: #6fbe44; }
-        section.container[data-template=page-index] section.cta .heading span a {
-          color: #6fbe44; }
-          section.container[data-template=page-index] section.cta .heading span a.active, section.container[data-template=page-index] section.cta .heading span a:hover {
-            color: #141414; }
-          section.container[data-template=page-index] section.cta .heading span a:active {
-            color: #141414; }
-    section.container[data-template=page-index] section.cta .details nav ul {
-      list-style: none;
-      margin: 0;
-      padding: 0; }
-      section.container[data-template=page-index] section.cta .details nav ul li {
-        margin: 0;
-        padding: 0;
-        display: inline-block;
-        *display: inline; }
-      section.container[data-template=page-index] section.cta .details nav ul li {
-        font-size: 20px;
-        line-height: 25px;
-        letter-spacing: 0;
-        margin: 0;
-        padding: 0;
-        font-weight: 400;
-        word-wrap: break-word;
-        font-size: 20px;
-        line-height: 25px;
-        text-transform: uppercase;
-        font-weight: 700; }
-        section.container[data-template=page-index] section.cta .details nav ul li i, section.container[data-template=page-index] section.cta .details nav ul li em {
-          text-transform: none;
-          font-style: italic; }
-        section.container[data-template=page-index] section.cta .details nav ul li + li {
-          margin-left: 10px;
-          padding-left: 10px;
-          border-left: 1px solid #6fbe44; }
-  section.container[data-template=page-index] section.newsletter {
-    text-align: center; }
-    section.container[data-template=page-index] section.newsletter .success,
-    section.container[data-template=page-index] section.newsletter .error {
-      padding-bottom: 5px;
-      display: none; }
-    section.container[data-template=page-index] section.newsletter .instructions {
-      font-size: 20px;
-      line-height: 25px;
-      letter-spacing: 0;
-      margin: 0;
-      padding: 0;
-      font-weight: 400;
-      word-wrap: break-word;
-      font-size: 13px;
-      line-height: 20px;
-      margin-bottom: 20px; }
-      section.container[data-template=page-index] section.newsletter .instructions i, section.container[data-template=page-index] section.newsletter .instructions em {
-        text-transform: none;
-        font-style: italic; }
-    section.container[data-template=page-index] section.newsletter .email {
-      margin-bottom: 20px; }
-      section.container[data-template=page-index] section.newsletter .email input {
-        border: 1px solid #000;
-        padding: 5px 10px;
-        line-height: 30px;
-        height: 40px;
-        width: 600px;
-        max-width: 100%; }
-    section.container[data-template=page-index] section.newsletter .subscribe {
-      margin-bottom: 20px; }
-  section.container[data-template=page-index] .decorator {
-    height: 50px;
-    background: url("../img/divider.png") center repeat-x;
-    background-size: 12px, auto, auto;
-    position: relative;
-    margin-bottom: 40px; }
-    section.container[data-template=page-index] .decorator .logo {
-      display: block;
-      margin: 0 auto;
-      width: 50px;
-      height: 50px;
-      background: #fff url("../img/logo-divider.png") center no-repeat;
-      background-size: 39px, auto, auto; }
-
-header.default {
-  max-width: 1520px;
-  margin: 0 auto;
-  padding: 40px 20px;
-  background: url("../img/divider.png") center bottom repeat-x;
-  background-size: 12px, auto, auto;
-  margin-bottom: 45px; }
-  header.default .logo img {
-    zoom: 40%; }
-
-footer.default {
-  background: #334d5a; }
-  footer.default .inner {
-    font-size: 20px;
-    line-height: 25px;
-    letter-spacing: 0;
-    margin: 0;
-    padding: 0;
-    font-weight: 400;
-    word-wrap: break-word;
-    font-size: 13px;
-    line-height: 20px;
-    color: #fff;
-    max-width: 1520px;
-    margin: 0 auto;
-    padding: 30px 20px; }
-    footer.default .inner i, footer.default .inner em {
-      text-transform: none;
-      font-style: italic; }
-    footer.default .inner a {
-      color: #fff; }
-      footer.default .inner a.active, footer.default .inner a:hover {
-        color: #141414; }
-      footer.default .inner a:active {
-        color: #141414; }
-    footer.default .inner:before, footer.default .inner:after {
-      content: " ";
-      display: block;
-      height: 0;
-      clear: both;
-      visibility: hidden; }
-    footer.default .inner a:hover {
-      color: #6fbe44; }
-    footer.default .inner .legal {
-      float: left;
-      padding-bottom: 20px; }
-      footer.default .inner .legal .credit ul {
-        list-style: none;
-        margin: 0;
-        padding: 0; }
-        footer.default .inner .legal .credit ul li {
-          margin: 0;
-          padding: 0;
-          display: inline-block;
-          *display: inline; }
-        footer.default .inner .legal .credit ul li + li:before {
-          content: ' | '; }
-    footer.default .inner .info {
-      float: right;
-      text-align: right; }
-      footer.default .inner .info .logo {
-        margin-bottom: 20px; }
-        footer.default .inner .info .logo img {
-          zoom: 50%; }
-      footer.default .inner .info .social ul {
-        list-style: none;
-        margin: 0;
-        padding: 0; }
-        footer.default .inner .info .social ul li {
-          margin: 0;
-          padding: 0;
-          display: inline-block;
-          *display: inline; }
-        footer.default .inner .info .social ul li img {
-          zoom: 50%; }
-        footer.default .inner .info .social ul li:hover {
-          opacity: .9; }
-        footer.default .inner .info .social ul li + li {
-          margin-left: 10px; }
 
 .lightbox-wrap .lightbox-box .close {
   position: fixed;
@@ -596,8 +329,8 @@ footer.default {
   font-size: 12px;
   line-height: 20px;
   color: #333333;
-  font-family: 'Ubuntu', Helvetica Neue,Helvetica,Arial,sans-serif;
-  font-weight: 300; }
+  font-family: Helvetica Neue,Helvetica,Arial,sans-serif;
+  font-weight: 600; }
   .lightbox-wrap .lightbox-box .close i, .lightbox-wrap .lightbox-box .close em {
     text-transform: none;
     font-style: italic; }
@@ -619,8 +352,8 @@ body {
   min-height: 100%;
   position: relative;
   background: #fff;
-  font-family: 'Ubuntu', Helvetica Neue,Helvetica,Arial,sans-serif;
-  font-weight: 300; }
+  font-family: Helvetica Neue,Helvetica,Arial,sans-serif;
+  font-weight: 600; }
 
 a:hover, a:active {
   text-decoration: none; }

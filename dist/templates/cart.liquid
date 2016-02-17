@@ -1,0 +1,63 @@
+
+<div class="hero">
+  <div class="title">
+    <h1>Your Cart {% if cart.item_count > 0 %}({{ cart.item_count }} Item{% if cart.item_count > 1 %}s{% endif %}){% endif %}</h1>
+  </div>
+</div>
+<section class="cart">
+  {% if cart.item_count == 0 %}
+    <div class="empty">
+      <h3>Your Cart is empty, <a href="/collections/all">continue shopping?</a></h3>  
+    </div>
+  {% else %} 
+    <div class="details">
+      <form action="/cart" method="post" id="cartform">
+        <table class="table-cart">
+          <thead>
+             <tr>
+               <th class="thumb">Item</th>
+               <th class="title">&nbsp;</th>
+               <th class="price">Price</th>
+               <th class="quantity">Quantity</th>
+               <th class="total">Total</th>
+               <th>&nbsp;</th>
+             </tr>
+           </thead>
+           <tbody>
+             {% for item in cart.items %}
+             <tr>
+              <td data-label="Thumb" class="thumb">
+                <img src="{{ item.product.images[0] | product_img_url: 'small' }}"/>
+              </td>
+              <td data-label="Title" class="title">
+                <a href="{{ item.product.url }}">{{ item.title }}</a><br />{{ variant.title }}
+              </td>
+              <td data-label="Price" class="price">{{ item.line_price | money }}</td>
+              <td data-label="Quantity" class="quantity"><input type="text" size="2" name="updates[{{item.variant.id}}]" id="updates_{{item.variant.id}}" value="{{item.quantity}}"/></li></td>
+              <td data-label="Total" class="total">{{ item.price | money }}</td>
+              <td data-label="Controls" class="remove"><a href="/cart/change/{{ item.variant.id }}?quantity=0" >Remove</a></td>
+             </tr>
+             {% endfor %}
+           </tbody>
+        </table>
+        <!--
+        <div class="subtotal">
+          <h4>Subtotal: {{ cart.total_price | money }}</h4>
+        </div>
+        -->
+        <div class="additional-instructions">
+          <textarea id="additional-instructions" placeholder="You can write additional instructions here" name="attributes[Additional instructions]">{{ cart.attributes["Additional instructions"] }}</textarea>
+        </div>
+        <div class="controls">
+          <p>
+            <button type="submit" value="Update Cart" name="update">Update Cart</button>&nbsp;
+            <button type="submit" value="Check Out" name="checkout">Check Out</button>
+          </p>
+          <p>
+            <a href="/">Continue Shopping</a>
+          </p>
+        </div>
+      </form>
+    </div>
+  {% endif %}
+</section>
