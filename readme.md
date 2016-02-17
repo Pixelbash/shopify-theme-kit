@@ -16,6 +16,7 @@ Shopify is great, but developing themes in a browser is less so. This kit lets y
 - gulp
 
 ##Todo
+- Create a working example theme that looks decent
 - Using shopify variables in compiled SCSS
 - Smaller JS libraries
 
