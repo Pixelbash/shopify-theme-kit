@@ -110,7 +110,7 @@ gulp.task('run', () => {
 gulp.task('watch', () => {
   for(var task_name of task_names) {
     console.log('Watching ' + paths[task_name].watch);
-    gulp.watch(paths[task_name].watch,[task_name]);
+    gulp.watch(paths[task_name].watch, {interval : 500},[task_name]);
   }
   gulp.start('shopify_watch');
 });
