@@ -20,7 +20,15 @@ Shopify is great, but developing themes in a browser is less so. This kit lets y
 - Using shopify variables in compiled SCSS
 - Smaller JS libraries
 
-##v3.0 Changes
+##v0.4 Changes
+- ES6 Cleanup + Update
+- SCSS Cleanup + Update
+- Template Cleanup + Strip
+- Settings Cleanup + Strip
+- Custom lodash JS
+- Zepto JS, Velocity JS
+
+##v0.3 Changes
 - Gulpfile now uses ES6
 - Cleaned up gulp file
 - Separate config file with example included
