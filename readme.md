@@ -18,7 +18,6 @@ Shopify is great, but developing themes in a browser is less so. This kit lets y
 ##Todo
 - Create a working example theme that looks decent
 - Using shopify variables in compiled SCSS
-- Smaller JS libraries
 
 ##v0.4 Changes
 - ES6 Cleanup + Update
