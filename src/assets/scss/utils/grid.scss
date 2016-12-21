@@ -1,42 +1,59 @@
-* {	
+* { 
   -moz-box-sizing: border-box;
-  -webkit-box-sizing: border-box;	
+  -webkit-box-sizing: border-box; 
   box-sizing: border-box;
 }
 
-@mixin columnConstructor($count, $percentage, $gutter) {
-  $calcPercentage: (($percentage/$count) * 100) + 0%;
+@function calcPercentage($base, $cols) {
+  $calcPercentage: (($cols/$base) * 100) + 0%;
+  @return $calcPercentage;
+}
+
+/*
+
+Columns 
+
+*/
+@mixin columnConstructor($base, $cols, $gutter) {
   float:left;
   padding:0 $gutter;
-  width: #{$calcPercentage};  
+  width: calcPercentage($base, $cols);
   &.compact {padding:0;}
 }
 
-@mixin offsetConstructor($count, $percentage, $gutter) {
-  $calcPercentage: (($percentage/$count) * 100) + 0%;
-  margin-left: #{$calcPercentage};  
+@mixin spanX($base, $num:1,$gutter : $gutter) {
+  @include columnConstructor($base, $num, $gutter);
 }
 
 @mixin span($num:1,$gutter : $gutter) {
-  @include columnConstructor(12,$num, $gutter);
+  @include columnConstructor($columns,$num, $gutter);
 }
 
-@mixin offset($num:1,$gutter : $gutter) {
-  @include offsetConstructor(12,$num, $gutter);
-}
 
-@mixin spanX($count, $num:1,$gutter : $gutter) {
-  @include columnConstructor($count, $num, $gutter);
-}
+/*
 
-@mixin offsetX($count, $num:1,$gutter : $gutter) {
-  @include offsetConstructor($count, $num, $gutter);
-}
+Offsets and other helpers 
 
+*/
 @mixin inline-span($num:1,$gutter : $gutter) {
-  @include span($num,$gutter);
+  @include columnConstructor($columns,$num, $gutter);
   text-align:left;
   float:none;
   display:inline-block;
   vertical-align:top;
+}
+@mixin offset($num) {
+  margin-left: calcPercentage($columns, $num);
+}
+
+@mixin offsetX($base, $num) {
+  margin-left: calcPercentage($base, $num);
+}
+
+@mixin widthX($base, $cols) {
+  width: calcPercentage($base, $cols);
+}
+
+@mixin leftX($base, $cols) {
+  left: calcPercentage($base, $cols);
 }

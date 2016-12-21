@@ -1,3 +1,4 @@
+@charset "UTF-8";
 /* MASTER */
 /* http://meyerweb.com/eric/tools/css/reset/ 
    v2.0 | 20110126
@@ -357,3 +358,179 @@ body {
 
 a:hover, a:active {
   text-decoration: none; }
+
+html body {
+  font-family: Helvetica Neue,Helvetica,Arial,sans-serif;
+  font-weight: 600; }
+
+header.default {
+  max-width: 1520px;
+  margin: 0 auto;
+  padding: 30px 0; }
+  header.default .logo {
+    text-align: center; }
+  header.default .menu {
+    list-style: none;
+    margin: 0;
+    padding: 0;
+    text-align: center; }
+    header.default .menu li {
+      margin: 0;
+      padding: 0;
+      display: inline-block;
+      *display: inline; }
+    header.default .menu ul li + li {
+      margin-left: 20px; }
+
+.container-wrap:before, .container-wrap:after {
+  content: " ";
+  display: block;
+  height: 0;
+  clear: both;
+  visibility: hidden; }
+
+.container-wrap .container {
+  max-width: 1520px;
+  margin: 0 auto;
+  background: #fff;
+  padding: 20px 30px; }
+  .container-wrap .container .header {
+    font-size: 20px;
+    line-height: 25px;
+    color: #141414;
+    margin: 0;
+    padding: 0;
+    font-weight: 700;
+    word-wrap: break-word;
+    font-size: 30px;
+    line-height: 32px;
+    text-transform: uppercase;
+    padding-bottom: 30px; }
+    .container-wrap .container .header a {
+      color: #141414; }
+      .container-wrap .container .header a.active, .container-wrap .container .header a:hover {
+        color: #141414; }
+      .container-wrap .container .header a:active {
+        color: #141414; }
+    .container-wrap .container .header i, .container-wrap .container .header em {
+      text-transform: none;
+      font-style: italic; }
+  .container-wrap .container .content {
+    font-size: 20px;
+    line-height: 25px;
+    letter-spacing: 0;
+    margin: 0;
+    padding: 0;
+    font-weight: 400;
+    word-wrap: break-word;
+    font-size: 20px;
+    line-height: 25px;
+    letter-spacing: 0;
+    margin: 0;
+    padding: 0;
+    font-weight: 400;
+    word-wrap: break-word;
+    font-size: 12px;
+    line-height: 20px;
+    color: #333333; }
+    .container-wrap .container .content i, .container-wrap .container .content em {
+      text-transform: none;
+      font-style: italic; }
+    .container-wrap .container .content i, .container-wrap .container .content em {
+      text-transform: none;
+      font-style: italic; }
+    .container-wrap .container .content a {
+      color: #333333; }
+      .container-wrap .container .content a.active, .container-wrap .container .content a:hover {
+        color: #141414; }
+      .container-wrap .container .content a:active {
+        color: #141414; }
+    .container-wrap .container .content dl, .container-wrap .container .content ol, .container-wrap .container .content p, .container-wrap .container .content pre, .container-wrap .container .content table, .container-wrap .container .content ul {
+      padding-bottom: 1em; }
+    .container-wrap .container .content h1, .container-wrap .container .content h2, .container-wrap .container .content h3, .container-wrap .container .content h4, .container-wrap .container .content h5, .container-wrap .container .content h6 {
+      font-size: 20px;
+      line-height: 25px;
+      color: #141414;
+      margin: 0;
+      padding: 0;
+      font-weight: 700;
+      word-wrap: break-word;
+      font-size: 12px;
+      line-height: 20px;
+      color: #333333;
+      text-transform: uppercase;
+      font-family: Helvetica Neue,Helvetica,Arial,sans-serif;
+      font-weight: 600;
+      padding-bottom: 0.5em; }
+      .container-wrap .container .content h1 a, .container-wrap .container .content h2 a, .container-wrap .container .content h3 a, .container-wrap .container .content h4 a, .container-wrap .container .content h5 a, .container-wrap .container .content h6 a {
+        color: #141414; }
+        .container-wrap .container .content h1 a.active, .container-wrap .container .content h1 a:hover, .container-wrap .container .content h2 a.active, .container-wrap .container .content h2 a:hover, .container-wrap .container .content h3 a.active, .container-wrap .container .content h3 a:hover, .container-wrap .container .content h4 a.active, .container-wrap .container .content h4 a:hover, .container-wrap .container .content h5 a.active, .container-wrap .container .content h5 a:hover, .container-wrap .container .content h6 a.active, .container-wrap .container .content h6 a:hover {
+          color: #141414; }
+        .container-wrap .container .content h1 a:active, .container-wrap .container .content h2 a:active, .container-wrap .container .content h3 a:active, .container-wrap .container .content h4 a:active, .container-wrap .container .content h5 a:active, .container-wrap .container .content h6 a:active {
+          color: #141414; }
+      .container-wrap .container .content h1 i, .container-wrap .container .content h1 em, .container-wrap .container .content h2 i, .container-wrap .container .content h2 em, .container-wrap .container .content h3 i, .container-wrap .container .content h3 em, .container-wrap .container .content h4 i, .container-wrap .container .content h4 em, .container-wrap .container .content h5 i, .container-wrap .container .content h5 em, .container-wrap .container .content h6 i, .container-wrap .container .content h6 em {
+        text-transform: none;
+        font-style: italic; }
+      .container-wrap .container .content h1 a, .container-wrap .container .content h2 a, .container-wrap .container .content h3 a, .container-wrap .container .content h4 a, .container-wrap .container .content h5 a, .container-wrap .container .content h6 a {
+        color: #333333; }
+        .container-wrap .container .content h1 a.active, .container-wrap .container .content h1 a:hover, .container-wrap .container .content h2 a.active, .container-wrap .container .content h2 a:hover, .container-wrap .container .content h3 a.active, .container-wrap .container .content h3 a:hover, .container-wrap .container .content h4 a.active, .container-wrap .container .content h4 a:hover, .container-wrap .container .content h5 a.active, .container-wrap .container .content h5 a:hover, .container-wrap .container .content h6 a.active, .container-wrap .container .content h6 a:hover {
+          color: #141414; }
+        .container-wrap .container .content h1 a:active, .container-wrap .container .content h2 a:active, .container-wrap .container .content h3 a:active, .container-wrap .container .content h4 a:active, .container-wrap .container .content h5 a:active, .container-wrap .container .content h6 a:active {
+          color: #141414; }
+    .container-wrap .container .content b, .container-wrap .container .content strong {
+      font-weight: 600; }
+    .container-wrap .container .content i, .container-wrap .container .content em {
+      font-style: italic; }
+    .container-wrap .container .content a {
+      text-decoration: underline; }
+      .container-wrap .container .content a:hover {
+        color: inherit; }
+    .container-wrap .container .content ul li {
+      margin-left: 18px; }
+      .container-wrap .container .content ul li:before {
+        color: #333333;
+        content: "—";
+        margin-left: -18px;
+        padding-right: 6px; }
+
+footer.default {
+  max-width: 1520px;
+  margin: 0 auto;
+  padding: 30px 0;
+  text-align: center; }
+  footer.default .social {
+    list-style: none;
+    margin: 0;
+    padding: 0; }
+    footer.default .social li {
+      margin: 0;
+      padding: 0;
+      display: inline-block;
+      *display: inline; }
+    footer.default .social a {
+      color: #141414; }
+      footer.default .social a.active, footer.default .social a:hover {
+        color: #141414; }
+      footer.default .social a:active {
+        color: #141414; }
+  footer.default .newsletter h3 {
+    font-size: 20px;
+    line-height: 25px;
+    color: #141414;
+    margin: 0;
+    padding: 0;
+    font-weight: 700;
+    word-wrap: break-word;
+    text-transform: uppercase;
+    font-size: 13px;
+    line-height: 20px;
+    padding-bottom: 10px; }
+    footer.default .newsletter h3 a {
+      color: #141414; }
+      footer.default .newsletter h3 a.active, footer.default .newsletter h3 a:hover {
+        color: #141414; }
+      footer.default .newsletter h3 a:active {
+        color: #141414; }
+    footer.default .newsletter h3 i, footer.default .newsletter h3 em {
+      text-transform: none;
+      font-style: italic; }

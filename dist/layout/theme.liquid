@@ -1,71 +1,27 @@
-{% capture body_class %}{{ template | replace: '.', ' ' | truncatewords: 1, '' }}{% endcapture %}
+{% include 'liquid-globals' %}
 <!doctype html>
 <html dir="ltr" lang="en" class="no-js">
-  <meta charset="utf-8" />
-  <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
-  <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
-  <meta content="width=device-width, initial-scale=1" name="viewport">
-
   {% include 'common-head-meta' %}
-
-  <link rel="apple-touch-icon-precomposed" sizes="114x114" href="{{ 'apple-touch-icon-114x114-precomposed.png' | asset_url }}">
-  <link rel="alternate" type="application/rss+xml" title="{{shop.name}} | Blog" href="/blogs/news.atom" />
-  <link rel="sitemap" type="application/xml" title="Sitemap" href="{{ 'sitemap.xml' | asset_url }}" />
-  <link rel="shortcut icon" href="{{ 'favicon.ico' | asset_url }}" type="image/png" />
-  <link rel="stylesheet" href="{{ 'style.css' | asset_url }}" media="screen" />
-  <script type="text/javascript">
-    window._data = {};
-    window._data.cart = {{ cart | json }};
-    window._data._money_format = '{{ shop.money_format }}';
-  </script>
-
-  {{ 'plugins.js' | asset_url | script_tag  }}
-  {{ 'api.jquery.js' | shopify_asset_url | script_tag }}
-  {{ "/services/javascripts/currencies.js" | script_tag }}
-  {{ 'option_selection.js' | shopify_asset_url | script_tag }}
-
-  <!-- give life to HTML5 objects in IE -->
-  <!--[if lte IE 8]><script src="//html5shim.googlecode.com/svn/trunk/html5.js"></script><![endif]-->
-  <script>(function(H){H.className=H.className.replace(/\bno-js\b/,'js')})(document.documentElement)</script>
-    
-  {% include 'common-head-analytics' %}
-
+  {% include 'common-head-styles' %}
+  {% include 'common-head-icons' %}
+  {% include 'common-head-scripts' %}
+  {% include 'common-head-extra' %}
   {{ content_for_header }}
+  {% include 'common-head-analytics' %}
 </head>
 
-<body class="{{ body_class }}" id="{{ page_title | handle }}">
+<body class="{{ template_class }}" id="{{ page_title | handle }}">
+  {% if template contains == 'index' %}
+    {% include 'element-landing' %}
+  {% endif %}
 
-  <header class="logo">
-    <div class="logo-wrap">
-      <div class="logo">
-        <div class="inner">
-          <div class="details">
-            <div class="site">
-              <h1><a href="{{ shop.url }}">{{ shop.name }}</a></h1>
-            </div>
-          </div>
-        </div>
-      </div>
-    </div>
-  </header>
+  {% include 'common-header' %}
 
-  {% include 'common-header-main' %}  
-
-  <section class="container-wrap container-wrap-{{ body_class }}">
+  <section class="container-wrap container-wrap-{{ template_class }}">
     {{ content_for_layout }}
   </section>
 
   {% include 'common-footer' %}
-
-  <!-- panels -->
-  {% include 'panel-cart' %}
-  <div id="panelgap"></div>
-
-  <!-- templates -->
-  {% include 'template-shipping' %}
-       
-  <!-- site JS -->
-  {{ 'init.js' | asset_url  | script_tag }}
 </body>
 </html>
  

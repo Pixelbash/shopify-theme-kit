@@ -31,10 +31,10 @@ export default class Config {
       bower : {
         watch: `${dirs.src}/assets/js/lib/**/*`,
         src: [
-          `${dirs.src}/assets/js/lib/jquery/dist/jquery.js`,
-          `${dirs.src}/assets/js/lib/radio/radio.js`,
-          `${dirs.src}/assets/js/lib/bxSlider/dist/jquery.bxslider.js`,
-          `${dirs.src}/assets/js/lib/underscore/underscore.js`,
+          `${dirs.src}/js/bower/radio/radio.js`,
+          `${dirs.src}/js/bower/zepto/zepto.js`,
+          `${dirs.src}/js/lib/lodash/lodash.custom.js`,
+          `${dirs.src}/js/bower/velocity/velocity.js`,
         ],
         dest: `${dirs.dest}/assets/`
       },

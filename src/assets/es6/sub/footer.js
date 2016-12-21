@@ -1,13 +1,11 @@
-export default class Landing {
+export default class Default {
   constructor(main,utils) {
     this.m = main;
     this.u = utils;
-    radio('action/footer').subscribe((data) => {this.footer(data);});
+    radio('footer').subscribe((d) => {this.init(d);});
   }
 
-  footer(data) {
-    this.$newsletter_form = data.$newsletter_form;
-    this.u.newsletter.pub(); 
-    this.u.newsletter.sub(); 
+  init(d) {
+    this._d = d;
   }
 }    

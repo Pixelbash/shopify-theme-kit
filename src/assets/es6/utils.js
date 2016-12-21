@@ -1,27 +1,25 @@
 import Helpers from './utils/helpers/helpers';
-import Vectors from './utils/helpers/vectors';
 import Cookies from './utils/helpers/cookies';
-import Hash from './utils/helpers/hash';
-import Lightbox from './utils/lightbox/main';
-
+import Fixes from './utils/helpers/fixes';
+import DisableScroll from './utils/helpers/disable_scroll';
 import Preload from './utils/preload/preload';
 import Window from './utils/window/pub';
 import Newsletter from './utils/newsletter/mailchimp';
-import Fixes from './utils/helpers/fixes';
+import Lbox from './utils/lbox/lbox';
+import Qbox from './utils/qbox/qbox';
 
 export default class Utils {
   constructor() {
 
-    this.preload    = new Preload();
-    this.newsletter = new Newsletter();
-    this.helpers    = new Helpers();
-    this.vectors    = new Vectors();
-    this.cookies    = new Cookies();
-    this.hash       = new Hash(); 
-    this.lightbox   = new Lightbox();
-    this.window     = new Window();
+    this.fixes   = new Fixes(this);
+    this.helpers = new Helpers(this);
 
-    //Fixes
-    this.fixes      = new Fixes(); 
+    this.preload        = new Preload(this);
+    this.window         = new Window(this);
+    this.disable_scroll = new DisableScroll(this);
+    this.newsletter     = new Newsletter(this);
+    this.lbox           = new Lbox(this);
+    this.qbox           = new Qbox(this);
+    this.cookies        = new Cookies(this);
   }
-}
+}  

@@ -2,6 +2,16 @@
 $wrap:  1520px; 
 $gutter: 16px;
 
+$breakpoints: (
+  'xxl'  : ( max-width: 1200px ),
+  'xl'  : ( max-width: 1000px ),
+  'l' : ( max-width:  900px ),
+  'm' : ( max-width:  800px ),
+  's'  : ( max-width:  720px ),
+  'xs'  : ( max-width:  600px ),
+  'xxs'  : ( max-width:  420px ),
+);
+
 $light:        #fff;
 $lightestgrey: #e6e6e6;
 $lightgrey:    #b3b3b3;
@@ -85,3 +95,5 @@ a {
     
   }
 }
+
+@import 'example-styles.scss';
