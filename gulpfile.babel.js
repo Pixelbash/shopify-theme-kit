@@ -9,7 +9,7 @@ import bower from 'gulp-bower';
 import concat from 'gulp-concat';
 import rename from 'gulp-rename';
 import watch from 'gulp-watch';
-import image from 'gulp-image-optimization';
+import image from 'gulp-imagemin';
 import gulpShopify from 'gulp-shopify-upload';
 
 import browserSync from 'browser-sync';
@@ -43,11 +43,7 @@ gulp.task("img", () => {
   console.log('Running img');
   return gulp.src(paths.img.src)
     .pipe(changed("dist/img"))
-    .pipe(image({
-      optimizationLevel: 5,
-      progressive: true,
-      interlaced: true
-    }))
+    .pipe(image())
     .pipe(gulp.dest(paths.img.dest));
 });
 
@@ -116,5 +112,5 @@ gulp.task('watch', () => {
 });
 
 gulp.task('default', () => {
-  gulp.start('watch');
+  gulp.start('run');
 });
